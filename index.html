@@ -1,10 +1,18 @@
 <html>
     <head>
-        <script type="text/javascript" src="swf2js.js"></script>
+        <title>puniki</title>
     </head>
     <body>
-        <script type="text/javascript">
-            swf2js.load("./homerun.swf");
+        <script>
+            window.RufflePlayer = window.RufflePlayer || {};
+            window.addEventListener("load", (event) => {
+                const ruffle = window.RufflePlayer.newest();
+                const player = ruffle.createPlayer();
+                const container = document.getElementById("container");
+                container.appendChild(player);
+                player.load("homerun.swf");
+            });
         </script>
+        <script src="ruffle.js"></script>
     </body>
 </html>
